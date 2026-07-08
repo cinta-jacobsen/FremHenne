@@ -103,7 +103,16 @@ blockquote cite{display:block;font-family:'Mulish',sans-serif;font-style:normal;
 /* ---------- mentorship ---------- */
 .mentor{background:var(--sand-soft)}
 .mentor-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:start}
-@media(max-width:880px){.mentor-grid{grid-template-columns:1fr;gap:48px}.mentor-grid>div:first-child{order:2}.mentor-grid>div:last-child{order:1}}
+@media(max-width:880px){
+  .mentor-grid{display:flex;flex-direction:column;gap:0}
+  .mentor-grid>div{display:contents}
+  .mentor-grid h2{order:2}
+  .mentor-grid p{order:3}
+  .mentor-grid p.eyebrow{order:1}
+  .mentor-grid .frame{order:4;margin:30px 0 42px}
+  .mentor-grid .mentor-points{order:5}
+  .mentor-grid .insta-cards{order:6;margin-top:36px}
+}
 .mentor h2{font-size:clamp(36px,4.4vw,54px);margin-bottom:24px}
 .mentor p{color:var(--ink-soft);margin-bottom:18px;max-width:54ch}
 .mentor-points{list-style:none;margin-top:26px}
